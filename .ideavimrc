@@ -1,0 +1,78 @@
+"" Source your .vimrc
+"source ~/.vimrc
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+
+:set number relativenumber
+:set nu rnu
+:set clipboard=ideaput
+:set hls
+:set idearefactormode=keep
+
+let mapleader = " "
+
+nnoremap <c-f> :action GotoFile<CR> " Open file search
+
+" Set split windows
+nnoremap <leader>sv :action SplitVertically<CR>
+nnoremap <leader>sh :action SplitHorizontally<CR>
+nnoremap <leader>sm :action MoveEditorToOppositeTabGroup<CR>
+
+" Move between split windows
+sethandler <c-j> a:vim
+sethandler <c-k> a:vim
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+
+" Paste over currently selected text without yanking it
+vmap p \"_dp
+vmap P \"_dp
+
+" Indent highlighted lines
+vmap < <gv
+vmap > >gv
+
+" Move highlighted lines
+vmap J :m '>+1<CR>gv=gv " Down
+vmap K :m '<-2<CR>gv=gv " Up
+
+" Move between buffers
+nnoremap <a-.> :action NextTab<CR>
+nnoremap <a-,> :action PreviousTab<CR>
+nnoremap <a-x> :action CloseEditor<CR>
+nnoremap <a-z> :action CloseAllEditorsButActive<CR>
+" Open buffer to new window
+nnoremap <leader>nn :action EditSourceInNewWindow<CR>
+
+" Setup EasyMotion
+Plug 'easymotion/vim-easymotion'
+map <leader>j <Plug>(easymotion-f)
+map <leader>k <Plug>(easymotion-s)
+
+" Setup NERDTree
+Plug 'preservim/nerdtree'
+map <a-1> :NERDTreeFocus<CR>
+
+" Setup Surround Plugin
+Plug 'tpope/vim-surround'
+" cs<old surround><new surround> Change surroundings
+" ds<surround> Delete surrounding
+" S<surround> Surround text object
+
+" MultiCursor plugin
+Plug 'terryma/vim-multiple-cursors'
+map mc <A-n>
+map mx <A-x>
+map mp <A-p>
