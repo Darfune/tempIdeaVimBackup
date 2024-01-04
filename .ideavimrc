@@ -28,6 +28,8 @@ nnoremap <leader>sv :action SplitVertically<CR>
 nnoremap <leader>sh :action SplitHorizontally<CR>
 nnoremap <leader>sm :action MoveEditorToOppositeTabGroup<CR>
 
+map <c-a> ggVGY " Select and copy everything in current buffer
+
 " Move between split windows
 sethandler <c-j> a:vim
 sethandler <c-k> a:vim
@@ -76,3 +78,8 @@ Plug 'terryma/vim-multiple-cursors'
 map mc <A-n>
 map mx <A-x>
 map mp <A-p>
+
+Plug 'machakann/vim-highlightedyank'
+set highlightedyank
+let g:highlightedyank_highlight_color = "rgba(139, 233, 253, 80)"
+let g:highlightedyank_highlight_duration = "1000"
