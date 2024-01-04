@@ -28,7 +28,7 @@ nnoremap <leader>sv :action SplitVertically<CR>
 nnoremap <leader>sh :action SplitHorizontally<CR>
 nnoremap <leader>sm :action MoveEditorToOppositeTabGroup<CR>
 
-map <c-a> ggVGY " Select and copy everything in current buffer
+nnoremap <c-a> ggVGY " Select and copy everything in current buffer
 
 " Move between split windows
 sethandler <c-j> a:vim
