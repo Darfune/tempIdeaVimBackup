@@ -15,7 +15,7 @@ map Q gq
 
 :set number relativenumber
 :set nu rnu
-:set clipboard=ideaput
+:set clipboard+=unnamed
 :set hls
 :set idearefactormode=keep
 
