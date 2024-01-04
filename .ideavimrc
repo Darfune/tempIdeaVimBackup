@@ -45,21 +45,21 @@ vmap < <gv
 vmap > >gv
 
 " Move highlighted lines
-vmap J :m '>+1<CR>gv=gv " Down
-vmap K :m '<-2<CR>gv=gv " Up
+vnoremap <s-k> :m -2<CR>gv=gv
+vnoremap <s-j> :m '>+<CR>gv=gv
 
 " Move between buffers
-nnoremap <a-.> :action NextTab<CR>
-nnoremap <a-,> :action PreviousTab<CR>
-nnoremap <a-x> :action CloseEditor<CR>
-nnoremap <a-z> :action CloseAllEditorsButActive<CR>
+map <a-.> :action NextTab<CR>
+map <a-,> :action PreviousTab<CR>
+map <a-x> :action CloseEditor<CR>
+map <a-z> :action CloseAllEditorsButActive<CR>
 " Open buffer to new window
-nnoremap <leader>nn :action EditSourceInNewWindow<CR>
+map <leader>nn :action EditSourceInNewWindow<CR>
 
 " Setup EasyMotion
 Plug 'easymotion/vim-easymotion'
-map <leader>j <Plug>(easymotion-f)
-map <leader>k <Plug>(easymotion-s)
+map s <Plug>(easymotion-f)
+map S <Plug>(easymotion-s)
 
 " Setup NERDTree
 Plug 'preservim/nerdtree'
